@@ -1,4 +1,5 @@
-﻿using DATN_API.Data.Entities;
+﻿using DATN_API.Data.Configurations;
+using DATN_API.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,26 @@ namespace DATN_API.Data.EF
         public DATNDbContext(DbContextOptions options) : base(options)
         {
 
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfiguration(new SanPhamConfiguration());
+            modelBuilder.ApplyConfiguration(new DanhMucConfiguration());
+            modelBuilder.ApplyConfiguration(new MauSanPhamConfiguration());
+            modelBuilder.ApplyConfiguration(new SizeSanPhamConfiguration());
+            modelBuilder.ApplyConfiguration(new KhuyenMaiConfiguration());
+            modelBuilder.ApplyConfiguration(new KhachHangConfiguration());
+            modelBuilder.ApplyConfiguration(new NewsConfiguration());
+            modelBuilder.ApplyConfiguration(new NhaCungCapConfiguration());
+            modelBuilder.ApplyConfiguration(new NhanVienConfiguration());
+            modelBuilder.ApplyConfiguration(new ThuongHieuConfiguration());
+            modelBuilder.ApplyConfiguration(new DonHangConfiguration());
+            modelBuilder.ApplyConfiguration(new ChiTietDonHangConfiguration());
+            modelBuilder.ApplyConfiguration(new HoaDonNhapConfiguration());
+            modelBuilder.ApplyConfiguration(new ChiTietHoaDonNhapConfiguration());
+
+
+            //base.OnModelCreating(modelBuilder);
         }
 
         public DbSet<SanPham> SanPhams { get; set; }

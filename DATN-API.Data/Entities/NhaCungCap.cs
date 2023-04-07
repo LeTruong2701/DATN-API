@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace DATN_API.Data.Entities
@@ -11,6 +12,8 @@ namespace DATN_API.Data.Entities
         public string DiaChi { get; set; }
         public string SDT { get; set; }
         public string Email { get; set; }
+ 
+        //public List<HoaDonNhap> HoaDonNhaps { get; set; }
         
     }
 }

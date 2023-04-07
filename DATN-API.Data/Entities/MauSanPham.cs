@@ -1,6 +1,7 @@
 ﻿using DATN_API.Data.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace DATN_API.Data.Entities
@@ -16,6 +17,14 @@ namespace DATN_API.Data.Entities
         public string AnhSanPham { get; set; }
         public Status CheckThanhToan { get; set; }
         public Status TrangThai { get; set; }
+
+        //public List<ChiTietDonHang> ChiTietDonHangs { get; set; }
+
+        //public List<ChiTietHoaDonNhap> ChiTietHoaDonNhaps { get; set; }
+
+        public SanPham SanPham { get; set; }
+
+        //public List<SizeSanPham> SizeSanPhams { get; set; }
 
     }
 }

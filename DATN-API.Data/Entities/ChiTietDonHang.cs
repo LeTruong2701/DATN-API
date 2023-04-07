@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace DATN_API.Data.Entities
@@ -13,5 +14,14 @@ namespace DATN_API.Data.Entities
         public int IdSizeSanPham { get; set; }
         public int SoLuong { get; set; }
         public decimal GiaMua { get; set; }
+
+
+        public DonHang DonHang { get; set; }
+
+        public SanPham SanPham { get; set; }
+
+        public MauSanPham MauSanPham { get; set; }
+
+        public SizeSanPham SizeSanPham { get; set; }
     }
 }
